@@ -31,5 +31,11 @@ namespace Start2
         {
             Console.WriteLine($"Unit - Peasant. Name - {name} Health - {health} Speed - {speed}");
         }
+
+        public void InflictDamage(Peasant unit)
+        {
+            Random random = new Random();
+            unit.health = unit.health - random.Next(minDamage, maxDamage);
+        }
     }
 }

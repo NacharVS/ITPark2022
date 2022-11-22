@@ -5,9 +5,24 @@ namespace Start2
 {
     class Program
     {
-        static void Sum3(int a, int b, int c)
+        static void Sum()
         {
-            Console.WriteLine($"summ - {a + b + c}");
+            Console.WriteLine("Не передали аргументы");
+        }
+
+        static void Sum(int a)
+        {
+            Console.WriteLine(a);
+        }
+
+        static void Sum(int a, int b)
+        {
+            Console.WriteLine(a + b);
+        }
+
+        static void Sum(int a, int b, int c)
+        {
+            Console.WriteLine(a + b + c);
         }
 
         static void Max(int a, int b, int c)
@@ -49,23 +64,26 @@ namespace Start2
         //}
         static void Main()
         {
-            //n! = 1 * 2 * 3 * 4...* n
-            int n = int.Parse(Console.ReadLine());
-            int res = 1;
-            for (int i = 1; i <= n; i = i + 1)
-            {
-                res = res * i;
-            }
-            Console.WriteLine(res);
-            
-            
-            //Peasant peasant = new Peasant("Vasiliy", 100, 30, 5, 1, 3, 500);
-            //Peasant peasant2 = new Peasant("Ivan", 100, 30, 6, 1, 3, 500);
 
-            //peasant.InflictDamage(pesant2);
-            //peasant2.ShowInfo();
-            //Peasant peasant3 = new Peasant("Denis", 100, 5, 5, 1, 3, 500);
-            //Peasant peasant4 = new Peasant("Panteleymon", 100, 27, 5, 1, 3, 500);
+            Warrior war1 = new Warrior("Stepan", 100);
+            Warrior war2 = new Warrior("Evlampiy");
+            Warrior war3 = new Warrior();
+            Peasant peasant3 = new Peasant("Denis", 100, 5, 5, 1, 3, 500);
+            Peasant peasant4 = new Peasant("Panteleymon", 100, 27, 5, 1, 3, 500);
+
+            peasant3.InflictDamage(peasant4);
+
+            Console.WriteLine(war3.minDamage);
+
+
+
+
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    peasant.InflictDamage(peasant2);
+            //    peasant2.ShowInfo();
+            //}
+
 
             //peasant.ShowInfo();
             //peasant4.ShowInfo();
