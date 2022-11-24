@@ -11,6 +11,7 @@ namespace Start2
         public int minDamage;
         public int maxDamage;
         public int maXWeight;
+        
 
         public Peasant()
         {
@@ -37,5 +38,7 @@ namespace Start2
             Random random = new Random();
             unit.health = unit.health - random.Next(minDamage, maxDamage);
         }
+
+
     }
 }

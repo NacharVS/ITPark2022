@@ -64,16 +64,48 @@ namespace Start2
         //}
         static void Main()
         {
+            int[] array = new int[20];
+            Random random = new Random();
 
-            Warrior war1 = new Warrior("Stepan", 100);
-            Warrior war2 = new Warrior("Evlampiy");
-            Warrior war3 = new Warrior();
-            Peasant peasant3 = new Peasant("Denis", 100, 5, 5, 1, 3, 500);
-            Peasant peasant4 = new Peasant("Panteleymon", 100, 27, 5, 1, 3, 500);
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = random.Next(1, 1000);
 
-            peasant3.InflictDamage(peasant4);
+            }
 
-            Console.WriteLine(war3.minDamage);
+            foreach (var item in array)
+            {
+                Console.Write($"{item} ");
+            }
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] % 7 == 0)
+                {
+                    array[i] = 0;
+                }
+            }
+            Console.WriteLine();
+            foreach (var item in array)
+            {
+                Console.Write($"{item} ");
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
