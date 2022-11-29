@@ -64,32 +64,34 @@ namespace Start2
         //}
         static void Main()
         {
-            int[] array = new int[20];
-            Random random = new Random();
+            HomeWork.ArraysOne();
+            
+            //int[] array = new int[20];
+            //Random random = new Random();
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                array[i] = random.Next(1, 1000);
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    array[i] = random.Next(1, 1000);
 
-            }
+            //}
 
-            foreach (var item in array)
-            {
-                Console.Write($"{item} ");
-            }
+            //foreach (var item in array)
+            //{
+            //    Console.Write($"{item} ");
+            //}
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] % 7 == 0)
-                {
-                    array[i] = 0;
-                }
-            }
-            Console.WriteLine();
-            foreach (var item in array)
-            {
-                Console.Write($"{item} ");
-            }
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    if (array[i] % 7 == 0)
+            //    {
+            //        array[i] = 0;
+            //    }
+            //}
+            //Console.WriteLine();
+            //foreach (var item in array)
+            //{
+            //    Console.Write($"{item} ");
+            //}
 
 
 
