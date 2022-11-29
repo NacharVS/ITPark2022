@@ -64,7 +64,7 @@ namespace Start2
         //}
         static void Main()
         {
-            HomeWork.ArraysOne();
+            HomeWork.ArrayMaxFor();
             
             //int[] array = new int[20];
             //Random random = new Random();

@@ -10,6 +10,10 @@ namespace Start2
     {
         public static void ArraysOne()
         {
+        }
+
+        public static void ArraySort()
+        {
             int checks = 0;
             int[] GruppaStakanchikov = new int[10];
 
@@ -29,7 +33,7 @@ namespace Start2
                         ZapasnoiStakanchik = GruppaStakanchikov[j];
                         GruppaStakanchikov[j] = GruppaStakanchikov[j + 1];
                         GruppaStakanchikov[j + 1] = ZapasnoiStakanchik;
-                        
+
                     }
                     checks++;
                 }
@@ -45,21 +49,52 @@ namespace Start2
             Console.WriteLine(checks);
 
 
-
-            //Console.WriteLine();
-
-            //for (int i = 1; i < array.Length; i++)
-            //{
-            //    if (array[i] > array[i - 1])
-            //    {
-            //        Console.Write($" {array[i]}");
-            //    }
-            //}
         }
 
-        public static void ArraySort()
+        public static void ArrayMaxFor()
         {
+            //помимо максимума найти ещё и номер ячейки в которой максимум был
+            int[] array = new int[10];
+            int max = 0;
 
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = new Random().Next(0, 50);
+                Console.Write($" {array[i]}");
+            }
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if(max < array[i])
+                {
+                    max = array[i];
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine(max);
+        }
+
+        public static void ArrayMaxForeach()
+        {
+            int[] array = new int[10];
+            int max = 0;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = new Random().Next(0, 50);
+                Console.Write($" {array[i]}");
+            }
+
+            foreach (var item in array)
+            {
+                if(item> max)
+                {
+                    max = item;
+                }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine(max);
         }
     }
 }
