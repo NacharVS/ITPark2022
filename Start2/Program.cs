@@ -8,13 +8,11 @@ namespace Start2
     {
         static void Main()
         {
-            Pistol pistol = new Pistol(20, 5, "BlackMetal", 0.7, false);
-            pistol.Info();
-            pistol.BurstShoot();
-            pistol.Info();
 
         }
     }
+
+    // Создать иерархию классов для стратегической игры. 
 
 
 }
