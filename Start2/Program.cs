@@ -8,11 +8,11 @@ namespace Start2
     {
         static void Main()
         {
-
+            ListWork.ListChecking();
         }
     }
 
-    // Создать иерархию классов для стратегической игры. 
+     
 
 
 }
