@@ -78,5 +78,26 @@ namespace Start2
             //    Console.WriteLine("Нет такого");
             //}
         }
+
+        public static void DeleteFromList() // удачление из списка
+        {
+            List<string> names = new List<string>();
+            names.Add("Vadim");          
+            names.Add("Aidar");
+            names.Add("Ivan");
+            names.Add("Aleksey");
+            names.Add("Ivan");
+            names.Add("Aleksey");
+            names.Insert(0, "Ivan");
+
+            // names.Remove("Ivan");// удалит первый элемент который совпал с параметром, в данном случае Ivan
+            //  names.RemoveAll(x => x == "Ivan"); удалит любое упоминание о Ivan
+            names.RemoveAt(2); // удаляет элемент по индексу, в данном случае индекс  2
+
+            foreach (var item in names)
+            {
+                Console.WriteLine(item);
+            }
+        }
     }
 }

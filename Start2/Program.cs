@@ -8,7 +8,13 @@ namespace Start2
     {
         static void Main()
         {
-            ListWork.ListChecking();
+            ListWork.DeleteFromList();
+            List<Peasant> peasants = new List<Peasant>();
+            peasants.Add(new Peasant());
+
+            // Создать список, каждый элемент которого представляет из себя класс User c Именем, фамилией и телефоном.
+            // Реализовать добавление нового юзера в список
+            // Реализовать проверку на то, что такой юзер есть в списке***
         }
     }
 
