@@ -45,9 +45,18 @@ namespace Start2.BankAccount
                         
                     else
                     {
-                        _balance = value;
+                        if (value >= 0)
+                        {
+                            _balance = value;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Не достаточно средств");
+                        }
                     }
                 }
+
+               
 
             }
         }
@@ -68,7 +77,7 @@ namespace Start2.BankAccount
 
         public void Widtraw(int summ)
         {
-
+            Balance -= summ;// Balance = Balance - summ;
         }
     }
 }

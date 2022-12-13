@@ -10,12 +10,12 @@ namespace Start2
         static void Main()
         {
             ClientAccount acc1 = new ClientAccount("Vadim", "Standart");
+            ClientAccount acc2 = new ClientAccount("Andrey", "Gold");
             acc1.ShowAccountInfo();
             acc1.Deposit(90000);
+            acc1.Widtraw(10000);
             acc1.ShowAccountInfo();
-            acc1.Deposit(5000);
-            acc1.ShowAccountInfo();
-            acc1.Deposit(50000);
+            acc1.Widtraw(100000);
             acc1.ShowAccountInfo();
 
 
