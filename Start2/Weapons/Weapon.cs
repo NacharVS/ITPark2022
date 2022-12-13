@@ -8,7 +8,7 @@ namespace Start2.Weapons
 {
     internal class Weapon
     {
-        public int minDamage;
+        private int _minDamage;
         public int maxDamage;
         public int rateOfFire;
         public string color;
@@ -16,9 +16,26 @@ namespace Start2.Weapons
         public int clip;
         public bool canBurstShooting;
 
+        public int MinDamage 
+        { 
+            get
+            {
+
+                return _minDamage;
+            }
+            set
+            {
+                
+                if(value > maxDamage)
+                    _minDamage = maxDamage;
+                else
+                    _minDamage = value;
+            }
+        }
+
         public Weapon(int minDamage, int maxDamage, int rateOfFire, string color, double weight, bool canBurstShooting)
         {
-            this.minDamage = minDamage;
+            this._minDamage = minDamage;
             this.maxDamage = maxDamage;
             this.rateOfFire = rateOfFire;
             this.color = color;
@@ -27,21 +44,25 @@ namespace Start2.Weapons
             this.canBurstShooting = canBurstShooting;
         }
 
+        public Weapon()
+        {
+        }
+
         public void Info()
         {
-            Console.WriteLine($"Weapon - Pistol. minDamage {minDamage} maxDamage {maxDamage} Clip: {clip}");
+            Console.WriteLine($"Weapon - Pistol. minDamage {MinDamage} maxDamage {maxDamage} Clip: {clip}");
         }
         public void Shoot()
         {
             if (clip > 0)
             {
                 Random random = new Random();
-                Console.WriteLine($"Piu! Inflicted Damage {random.Next(minDamage, maxDamage)}");
+                Console.WriteLine($"Piu! Inflicted Damage {random.Next(MinDamage, maxDamage)}");
                 clip = clip - 1;
             }
             else
             {
-                Console.WriteLine("Clip is empty");
+                ClipIsEmpty();
             }
         }
 
@@ -56,5 +77,12 @@ namespace Start2.Weapons
             else
                 Shoot();
         }
+
+        private void ClipIsEmpty()
+        {
+            Console.WriteLine("Clip is empty");
+        }
+
+       
     }
 }
