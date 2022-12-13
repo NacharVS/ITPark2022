@@ -4,6 +4,8 @@ namespace Start2
 {
     class Peasant
     {
+
+        //сделать свойствао для Health так, чтобы при нанесении урона превышающего остаток здооровья, здоровье было всегда 0
         public string name;
         public int price;
         public int health;
