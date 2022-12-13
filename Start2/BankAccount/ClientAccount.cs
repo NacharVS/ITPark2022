@@ -10,6 +10,7 @@ namespace Start2.BankAccount
     {
         private string _name;
 
+        public string AccStatus { get; set; }
         public string Name
         {
             get { return _name; }
@@ -24,10 +25,31 @@ namespace Start2.BankAccount
             _balance = 0;
         }
 
+        public ClientAccount(string name, string accStatus) 
+        {
+            Name = name;
+            AccStatus = accStatus;
+        }
+
         public int Balance
         {
             get { return _balance; }
-            set { _balance = value; }
+            set 
+            { 
+                if(AccStatus == "Standart")
+                {
+                    if(value > 100000)
+                    {
+                        Console.WriteLine("Для аккаунта Standart максимальная сумма 100000");
+                    }
+                        
+                    else
+                    {
+                        _balance = value;
+                    }
+                }
+
+            }
         }
 
         public void ShowAccountInfo()
@@ -36,7 +58,12 @@ namespace Start2.BankAccount
         }
         public void Deposit(int summ)
         {
-            Balance += summ; // Balance = Balance + summ;
+            if(summ < 0)
+            {
+                Console.WriteLine("Некоректное значение");
+            }
+            else
+                Balance += summ; // Balance = Balance + summ;
         }
 
         public void Widtraw(int summ)
