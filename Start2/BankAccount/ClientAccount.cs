@@ -30,6 +30,18 @@ namespace Start2.BankAccount
             set { _balance = value; }
         }
 
+        public void ShowAccountInfo()
+        {
+            Console.WriteLine($"Accout name: {Name} Balance {Balance}");
+        }
+        public void Deposit(int summ)
+        {
+            Balance += summ; // Balance = Balance + summ;
+        }
 
+        public void Widtraw(int summ)
+        {
+
+        }
     }
 }

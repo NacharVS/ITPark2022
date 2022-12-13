@@ -7,13 +7,8 @@ namespace Start2
     class Program
     {
         static void Main()
-        {
-            Weapon weapon = new Weapon(20, 50, 4, "red", 0.6, false);
-            Console.WriteLine(weapon.MinDamage);          
-            weapon.MinDamage = 30;
-            weapon.Info();
-            weapon.MinDamage = 10000;
-            weapon.Info();
+        { 
+           
 
 
 
