@@ -16,6 +16,11 @@ namespace Start2
         public int maXWeight;
         private int _maxHealth;
 
+        public bool isDead
+        {
+            get { return _isDead; }
+        }
+
         public int Health 
         { 
             get => _health;
@@ -78,6 +83,7 @@ namespace Start2
         {
             Random random = new Random();
             unit.Health = unit.Health - random.Next(minDamage, maxDamage);
+            Console.WriteLine($" Current Health  {unit.Health}");
         }
 
         public void InflictDamageUntilDeathDemo(Peasant peasant)
