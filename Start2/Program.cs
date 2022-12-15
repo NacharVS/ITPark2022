@@ -9,22 +9,13 @@ namespace Start2
     {
         static void Main()
         {
-            ClientAccount acc1 = new ClientAccount("Vadim", "Standart");
-            ClientAccount acc2 = new ClientAccount("Andrey", "Gold");
-            acc1.ShowAccountInfo();
-            acc1.Deposit(90000);
-            acc1.Widtraw(10000);
-            acc1.ShowAccountInfo();
-            acc1.Widtraw(100000);
-            acc1.ShowAccountInfo();
+            Peasant peasant = new Peasant("Ivan", 200, 30, 5, 1, 5, 500);
+            Peasant peasant2 = new Peasant("Andriyan", 200, 30, 5, 1, 5, 500);
+            peasant2.ShowInfo();
+            peasant.InflictDamageUntilDeath(peasant2);
 
 
 
-
-
-            // Создать список, каждый элемент которого представляет из себя класс User c Именем, фамилией и телефоном.
-            // Реализовать добавление нового юзера в список
-            // Реализовать проверку на то, что такой юзер есть в списке***
         }
     }
 

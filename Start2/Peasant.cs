@@ -8,12 +8,27 @@ namespace Start2
         //сделать свойствао для Health так, чтобы при нанесении урона превышающего остаток здооровья, здоровье было всегда 0
         public string name;
         public int price;
-        public int health;
+        private int _health;
         public int speed;
         public int minDamage;
         public int maxDamage;
         public int maXWeight;
-        
+
+        public int Health 
+        { 
+            get => _health;
+            set
+            {
+                if(value < 0)
+                {
+                    _health = 0;
+                }
+                else
+                {
+                    _health = value;
+                }
+            }
+        }
 
         public Peasant()
         {
@@ -23,7 +38,7 @@ namespace Start2
         {
             this.name = name;
             this.price = price;
-            this.health = health;
+            this._health = health;
             this.speed = speed;
             this.minDamage = minDamage;
             this.maxDamage = maxDamage;
@@ -32,14 +47,34 @@ namespace Start2
 
         public void ShowInfo()
         {
-            Console.WriteLine($"Unit - Peasant. Name - {name} Health - {health} Speed - {speed}");
+            Console.WriteLine($"Unit - Peasant. Name - {name} Health - {_health} Speed - {speed}");
         }
 
-        public void InflictDamage(Peasant unit)
+        public void Onehit(Peasant unit)
         {
             Random random = new Random();
-            unit.health = unit.health - random.Next(minDamage, maxDamage);
+            unit.Health = unit.Health - random.Next(minDamage, maxDamage);
         }
+
+        public void InflictDamageUntilDeath(Peasant unit)
+        {
+            Random random = new Random();
+            for (int i = 0; i < 20; i++)
+            {
+                if(unit.Health <= 0)
+                {
+                    Console.WriteLine("Противник убит");
+                    break;
+
+                }
+                else
+                {               
+                    unit.Health = unit.Health - random.Next(minDamage, maxDamage);
+                    Console.WriteLine($"Здоровье противника:{unit.Health}");
+                }
+            }
+        }
+
 
 
     }
