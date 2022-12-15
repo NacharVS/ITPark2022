@@ -9,6 +9,7 @@ namespace Start2
         public string name;
         public int price;
         private int _health;
+        private bool _isDead = false;
         public int speed;
         public int minDamage;
         public int maxDamage;
@@ -19,9 +20,11 @@ namespace Start2
             get => _health;
             set
             {
-                if(value < 0)
+                if(value <= 0)
                 {
                     _health = 0;
+                    Console.WriteLine($"{name} уничтожен");
+                    _isDead = true;
                 }
                 else
                 {
@@ -56,12 +59,12 @@ namespace Start2
             unit.Health = unit.Health - random.Next(minDamage, maxDamage);
         }
 
-        public void InflictDamageUntilDeath(Peasant unit)
+        public void InflictDamageUntilDeathDemo(Peasant peasant)
         {
             Random random = new Random();
             for (int i = 0; i < 20; i++)
             {
-                if(unit.Health <= 0)
+                if(peasant.Health <= 0)
                 {
                     Console.WriteLine("Противник убит");
                     break;
@@ -69,11 +72,23 @@ namespace Start2
                 }
                 else
                 {               
-                    unit.Health = unit.Health - random.Next(minDamage, maxDamage);
-                    Console.WriteLine($"Здоровье противника:{unit.Health}");
+                    peasant.Health = peasant.Health - random.Next(minDamage, maxDamage);
+                    Console.WriteLine($"Здоровье противника:{peasant.Health}");
                 }
             }
         }
+
+        public void InflictDamageUntilDeath(Peasant peasant)
+        {
+            Random random = new Random();
+
+            while (!peasant._isDead)
+            {
+                peasant.Health = peasant.Health - random.Next(minDamage, maxDamage);
+                Console.WriteLine($"Здоровье противника:{peasant.Health}");
+            }
+        }
+
 
 
 

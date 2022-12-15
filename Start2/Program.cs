@@ -11,9 +11,15 @@ namespace Start2
         {
             Peasant peasant = new Peasant("Ivan", 200, 30, 5, 1, 5, 500);
             Peasant peasant2 = new Peasant("Andriyan", 200, 30, 5, 1, 5, 500);
+            Shaman shaman = new Shaman();
             peasant2.ShowInfo();
-            peasant.InflictDamageUntilDeath(peasant2);
-
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant2.ShowInfo();
+            shaman.HealSomebody(peasant2);
+            peasant2.ShowInfo();
 
 
         }
