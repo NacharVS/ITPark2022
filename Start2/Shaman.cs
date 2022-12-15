@@ -10,7 +10,9 @@ namespace Start2
     {
         public void HealSomebody(Peasant peasant)
         {
-
+            
+            peasant.Health += 5;
+            Console.WriteLine($"Healed {peasant.name} current health {peasant.Health}");
         }
     }
 }

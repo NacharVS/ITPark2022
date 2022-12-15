@@ -14,21 +14,29 @@ namespace Start2
         public int minDamage;
         public int maxDamage;
         public int maXWeight;
+        private int _maxHealth;
 
         public int Health 
         { 
             get => _health;
             set
             {
-                if(value <= 0)
+                if(value > _maxHealth)
                 {
-                    _health = 0;
-                    Console.WriteLine($"{name} уничтожен");
-                    _isDead = true;
+                    _health = _maxHealth;
                 }
                 else
                 {
-                    _health = value;
+                    if (value <= 0)
+                    {
+                        _health = 0;
+                        Console.WriteLine($"{name} уничтожен");
+                        _isDead = true;
+                    }
+                    else
+                    {
+                        _health = value;
+                    }
                 }
             }
         }
@@ -46,6 +54,19 @@ namespace Start2
             this.minDamage = minDamage;
             this.maxDamage = maxDamage;
             this.maXWeight = maXWeight;
+            _maxHealth = health;
+        }
+
+        public Peasant(string name)
+        {
+            this.name = name;
+            this.price = 400;
+            this._health = 30;
+            this.speed = 5;
+            this.minDamage = 1;
+            this.maxDamage = 5;
+            this.maXWeight = 500;
+            _maxHealth = 30;
         }
 
         public void ShowInfo()

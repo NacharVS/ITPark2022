@@ -9,8 +9,8 @@ namespace Start2
     {
         static void Main()
         {
-            Peasant peasant = new Peasant("Ivan", 200, 30, 5, 1, 5, 500);
-            Peasant peasant2 = new Peasant("Andriyan", 200, 30, 5, 1, 5, 500);
+            Peasant peasant = new Peasant("Ivan");
+            Peasant peasant2 = new Peasant("Andriyan");
             Shaman shaman = new Shaman();
             peasant2.ShowInfo();
             peasant.Onehit(peasant2);
@@ -18,6 +18,30 @@ namespace Start2
             peasant.Onehit(peasant2);
             peasant.Onehit(peasant2);
             peasant2.ShowInfo();
+            shaman.HealSomebody(peasant2);
+            shaman.HealSomebody(peasant2);
+            shaman.HealSomebody(peasant2);
+            shaman.HealSomebody(peasant2);
+            shaman.HealSomebody(peasant2);
+
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            peasant.Onehit(peasant2);
+            shaman.HealSomebody(peasant2);
+            shaman.HealSomebody(peasant2);
             shaman.HealSomebody(peasant2);
             peasant2.ShowInfo();
 
