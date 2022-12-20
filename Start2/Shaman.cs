@@ -8,21 +8,40 @@ namespace Start2
 {
     internal class Shaman 
     {
-        public void HealSomebody(Peasant ascascs)
+        public Shaman()
         {
-            if (ascascs.isDead)
+            Energy = 60;
+        }
+
+        public Shaman(int energy)
+        {
+            Energy = energy;
+        }
+
+        public int Energy { get; set; }
+        public void HealSomebody(Peasant unit)
+        {
+            if (Energy > 0)
             {
-                Console.WriteLine("Пока не могу воскрешать мертвых");
+                if(unit.Health != unit.MaxHealth)
+                {
+                    while (Energy > 0 && unit.Health < unit.MaxHealth)
+                    {
+                        unit.Health += 5;
+                        Energy--; // Energy = Energy - 1;
+                    }
+                }
+                else
+                    Console.WriteLine($" {unit.name} Не нуждается в лечении");
             }
             else
-            {
-                ascascs.Health += 5;
-                Console.WriteLine($"Healed {ascascs.name} current health {ascascs.Health}");
-            }
+                Console.WriteLine("Не хватает энергии");
            
+        }
 
-            //Реализовать здесь поле ManaPoints и реализовать 2 метода, первый всегда лечит на 10  НЗ и тратит 2 маны
-            // второй лечит по макс, и тратит маны соразмерно, каждые 5 Нр - 1 МР
+        public void ShowInfo()
+        {
+            Console.WriteLine($"energy {Energy}");
         }
     }
 }

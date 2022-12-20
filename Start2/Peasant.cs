@@ -26,9 +26,9 @@ namespace Start2
             get => _health;
             set
             {
-                if(value > _maxHealth)
+                if(value > MaxHealth)
                 {
-                    _health = _maxHealth;
+                    _health = MaxHealth;
                 }
                 else
                 {
@@ -46,6 +46,8 @@ namespace Start2
             }
         }
 
+        public int MaxHealth { get => _maxHealth; set => _maxHealth = value; }
+
         public Peasant()
         {
         }
@@ -59,7 +61,7 @@ namespace Start2
             this.minDamage = minDamage;
             this.maxDamage = maxDamage;
             this.maXWeight = maXWeight;
-            _maxHealth = health;
+            MaxHealth = health;
         }
 
         public Peasant(string name)
@@ -71,7 +73,20 @@ namespace Start2
             this.minDamage = 1;
             this.maxDamage = 5;
             this.maXWeight = 500;
-            _maxHealth = 30;
+            MaxHealth = 30;
+        }
+
+        public Peasant(string name, int price, int health, int speed, int minDamage, int maxDamage, int maXWeight, int maxHealth) : this(name)
+        {
+            this.price = price;
+            _health = health;
+            _isDead = false;
+            this.speed = speed;
+            this.minDamage = minDamage;
+            this.maxDamage = maxDamage;
+            this.maXWeight = maXWeight;
+            _maxHealth = maxHealth;
+
         }
 
         public void ShowInfo()
