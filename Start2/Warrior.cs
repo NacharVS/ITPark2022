@@ -6,31 +6,10 @@ using System.Threading.Tasks;
 
 namespace Start2
 {
-    class Warrior
+    class Warrior : Unit
     {
-        public string name;
-        public int health;
-        public int minDamage;
-        public int maxDamage;
-
-        public Warrior()
+        public Warrior(string name, int price, int health, int speed, int minDamage, int maxDamage) : base(name, price, health, speed, minDamage, maxDamage)
         {
-
-        }
-
-        public Warrior(string name)
-        {
-            this.name = name;
-            this.health = 100;
-            this.minDamage = 5;
-            this.maxDamage = 10;
-        }
-
-        public Warrior(string name, int health) : this(name)
-        {
-            this.health = health;
-            this.minDamage = 10;
-            this.maxDamage = 30;
         }
     }
 }

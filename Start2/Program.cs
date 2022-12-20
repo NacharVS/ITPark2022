@@ -9,18 +9,14 @@ namespace Start2
     {
         static void Main()
         {
-            Peasant peasant = new Peasant("Ivan", 300, 9, 5, 1, 5, 500, 30);
-            Peasant peasant2 = new Peasant("Panteleymon", 300, 12, 5, 1, 5, 500, 30);
-            Peasant peasant3 = new Peasant("Varfolomey", 300, 19, 5, 1, 5, 500, 30);
+            Peasant peasant = new Peasant("Ivan", 300, 30, 5, 1, 5);      
+            Shaman shaman = new Shaman("Boromir", 900, 40, 7, 2, 8);
+            Archer archer = new Archer("Legolas", 1200, 60, 12, 3, 9, 15);
             peasant.ShowInfo();
-            Shaman shaman = new Shaman(50);
-            shaman.HealSomebody(peasant3);
-            peasant3.ShowInfo();
-            shaman.HealSomebody(peasant);
-            peasant.ShowInfo();
-            shaman.ShowInfo();
-            shaman.HealSomebody(peasant2);
-            peasant2.ShowInfo();
+            shaman.ShowInfo();   
+            archer.ShowInfo();
+            archer.Shoot();
+
 
         }
     }
