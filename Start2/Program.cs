@@ -12,10 +12,20 @@ namespace Start2
             Peasant peasant = new Peasant("Ivan", 300, 30, 5, 1, 5);      
             Shaman shaman = new Shaman("Boromir", 900, 40, 7, 2, 8);
             Archer archer = new Archer("Legolas", 1200, 60, 12, 3, 9, 15);
+            Warrior warrior = new Warrior("Boris", 600, 80, 8, 2, 9);
             peasant.ShowInfo();
-            shaman.ShowInfo();   
-            archer.ShowInfo();
-            archer.Shoot();
+            warrior.OneHit(shaman);
+            warrior.OneHit(shaman);
+            warrior.OneHit(shaman);
+            warrior.OneHit(shaman); 
+            warrior.OneHit(shaman); 
+            warrior.OneHit(shaman);
+            warrior.OneHit(shaman);
+            warrior.OneHit(shaman);
+            warrior.OneHit(shaman);
+
+
+
 
 
         }
